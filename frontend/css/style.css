@@ -106,3 +106,26 @@ html[lang="hi"] body,
 html[lang="hi"] [class*="font-"]:not(.material-symbols-outlined):not(.font-mono) {
     font-family: 'Plus Jakarta Sans', 'Noto Sans Devanagari', sans-serif;
 }
+
+#lang-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px;
+}
+
+#lang-switch .lang-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+    border: none;
+}
+
+#lang-switch .lang-btn.active {
+    background: #0d9488;
+    color: white;
+}
