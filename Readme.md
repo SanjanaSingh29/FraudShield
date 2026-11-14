@@ -1,102 +1,172 @@
 # 🛡️ FraudShield
 
-**Check it before you tap.** FraudShield is a scam-message explainer built for India. Upload (or paste) a screenshot of a suspicious SMS, WhatsApp or email and it shows a colour-coded danger flag, explains the tricks the scammer is using in plain words, and tells you exactly what to do next.
+**Check it before you tap.**
 
-> Built as a college hackathon project. This is a front-end **prototype** (see [Demo status](#demo-status)).
+FraudShield is an educational scam-message explainer designed for internet users in India. It helps users understand suspicious SMS, WhatsApp messages, and emails by highlighting common manipulation tactics, explaining potential warning signs, and suggesting appropriate next steps.
 
-## Features
+Users can paste suspicious message text or upload a screenshot and explore explanations in **English, Hinglish, and Hindi**.
 
-- **Danger flag system**: every result gets a score out of 100 and a colour-coded flag:
+🌐 **Live Demo:** https://fraudshield-fawn.vercel.app/
+
+## ✨ Features
+
+- **🚩 Risk Flag System:** Every demo analysis displays a score out of 100 with a colour-coded risk level.
 
   | Score | Flag | Meaning |
   |---|---|---|
   | 0–25 | 🟢 Green | Looks safe |
-  | 26–50 | 🟡 Yellow | Be careful, verify first |
+  | 26–50 | 🟡 Yellow | Be careful; verify first |
   | 51–75 | 🟠 Orange | High risk |
   | 76–100 | 🔴 Red | Scam alert |
 
-- **Explains the psychology**: shows the exact lines in the message that carry fake urgency, fake authority, fake websites, greed bait and so on, in simple language.
-- **Try-it demos**: four example messages, one for each flag level.
-- **3 languages**: English, Hinglish and हिन्दी. The choice is remembered in the browser.
-- **Voice explanations**: a speaker icon next to each explanation reads it aloud (Web Speech API).
-- **Common scams library**: India-style spam messages (bank reward-points APK, courier redelivery fee, fake part-time job, Amazon Prime renewal, fake Windows popup, electricity power-cut SMS) with filter tabs.
-- **Emergency steps**: what to do in the first hour if you already sent money or clicked a link (call **1930**, report on **cybercrime.gov.in**, **Sanchar Saathi**).
-- **What NOT to do after a scam**: six common mistakes to avoid.
-- **Privacy Guarantee** and **Terms of Service** pop-ups.
+- **🧠 Scam Psychology Explainer:** Highlights manipulation tactics such as fake urgency, fake authority, suspicious websites, and greed bait. Explains these tactics in simple language.
 
-## Demo status
+- **📩 Interactive Demo Messages:** Includes four sample messages representing different risk levels.
 
-This repository is a **prototype**:
+- **🌐 Multilingual Support:** Switch between English, Hinglish, and हिन्दी. Language preferences are remembered in the browser.
 
-- There is no backend and no AI model yet. When you upload a screenshot, the page shows an **example result**, not a real analysis. The four demo buttons show the full range of flags.
-- The sample scam messages are written examples modelled on common patterns. Phone numbers and links in them are masked or fake.
-- Your screenshot stays in your browser. Nothing is uploaded anywhere.
+- **🔊 Voice Explanations:** Uses the Web Speech API to read explanations aloud.
 
-## Run it locally
+- **📚 Common Scams Library:** Includes examples of Indian-style scams, such as:
+  - Bank reward-points APK scams
+  - Courier redelivery fee scams
+  - Fake part-time job offers
+  - Amazon Prime renewal scams
+  - Fake Windows security pop-ups
+  - Electricity power-cut SMS scams
 
-No build step. Just open `index.html` in a browser.
+- **🚨 Emergency Response Guide:** Provides recommended steps to take after a suspected scam, including calling **1930**, reporting at [cybercrime.gov.in](https://cybercrime.gov.in), and using [Sanchar Saathi](https://sancharsaathi.gov.in).
 
-```bash
-# or serve it locally
-python3 -m http.server 8000
-# then open http://localhost:8000
-```
+- **⚠️ Post-Scam Safety Tips:** Explains six common mistakes to avoid after encountering a scam.
 
-An internet connection is needed for the Tailwind CSS CDN and Google Fonts.
+- **🔒 Privacy and Terms:** Includes Privacy Guarantee and Terms of Service pop-ups.
 
-## Deploy on GitHub Pages
+## 🧪 Demo Status and Limitations
 
-1. Push this folder to a GitHub repository.
-2. Go to **Settings → Pages**.
-3. Under **Build and deployment**, choose **Deploy from a branch**, select `main` and `/ (root)`, then save.
-4. Your site will be live at `https://<your-username>.github.io/<repo-name>/`.
+FraudShield is currently a **frontend-only prototype** developed as a college hackathon project.
 
-## Tech stack
+- No backend or AI/ML model has been integrated yet.
+- Screenshot uploads currently display an example result rather than performing actual image or message analysis.
+- Demo buttons display predefined examples and risk scores.
+- Scam messages are illustrative examples based on common scam patterns. Phone numbers and links are masked or fictional.
+- Uploaded screenshots remain in the browser and are not sent to a server.
 
-- Plain HTML, CSS and JavaScript in a single file
-- [Tailwind CSS](https://tailwindcss.com) (CDN)
-- Google Fonts: Plus Jakarta Sans, Noto Sans Devanagari, Material Symbols
-- Web Speech API for voice
+The current version demonstrates the user interface, educational content, and intended functionality of the proposed system.
 
-## Browser notes
+## 🚀 Live Deployment
 
-- Voice quality depends on the voices installed on the device. Some devices have no Hindi (hi-IN) voice; the page shows a short message in that case and Hinglish or English still work.
-- Works best in the latest Chrome, Edge or Safari.
+FraudShield is deployed using **Vercel**.
 
-## Project structure
+Visit: https://fraudshield-fawn.vercel.app/
 
-```
-fraudshield/
-├── index.html              # page markup
-├── css/
-│   └── style.css           # custom styles (rest comes from Tailwind)
-├── js/
-│   ├── tailwind-config.js  # Tailwind theme: colours, fonts, spacing
-│   ├── data/
-│   │   ├── demos.js        # 4 demo messages + danger-score flags
-│   │   ├── scams.js        # "Common Scams" cards (Indian-style samples)
-│   │   └── legal.js        # Privacy Guarantee and Terms text
-│   ├── i18n.js             # English / Hinglish / Hindi translations
-│   └── app.js              # app logic: language, voice, results, upload, pop-ups
+## 💻 Run Locally
+
+No build process or package installation is required.
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/SanjanaSingh29/FraudShield.git
+   ```
+
+2. Open the project folder:
+
+   ```bash
+   cd FraudShield
+   ```
+
+3. Start a local server:
+
+   ```bash
+   python -m http.server 8000
+   ```
+
+4. Open the following URL in your browser:
+
+   ```text
+   http://localhost:8000
+   ```
+
+An internet connection is required to load Tailwind CSS through its CDN and Google Fonts.
+
+## 🛠️ Tech Stack
+
+- **HTML5** – Website structure
+- **CSS3** – Custom styling
+- **JavaScript** – Frontend functionality and interactions
+- **Tailwind CSS (CDN)** – Utility-based styling
+- **Google Fonts** – Plus Jakarta Sans and Noto Sans Devanagari
+- **Material Symbols** – Interface icons
+- **Web Speech API** – Voice explanations
+- **Vercel** – Frontend deployment
+- **Git & GitHub** – Version control and collaboration
+
+## 📁 Project Structure
+
+```text
+FraudShield/
+│
+├── frontend/
+│   ├── css/
+│   │   └── style.css
+│   │
+│   └── js/
+│       ├── data/
+│       │   ├── demos.js
+│       │   ├── scams.js
+│       │   └── legal.js
+│       │
+│       ├── tailwind_config.js
+│       ├── i18n.js
+│       └── app.js
+│
+├── backend/
+│
+├── ai_recommendation/
+│
+├── index.html
 └── README.md
 ```
 
-The scripts are plain `<script>` files loaded in this order: `demos.js`, `scams.js`, `legal.js`, `i18n.js`, `app.js`. There is no build step.
+*Note: The backend and AI recommendation directories are reserved for future development.*
 
-### Where to change things
+## 📌 Where to Make Changes
 
-- Add or edit a demo message: `js/data/demos.js`
-- Change score ranges or flag colours: `FLAGS` in `js/data/demos.js`
-- Add a scam card: `js/data/scams.js`
-- Fix a translation: `js/i18n.js` (page text) or the data file of that feature
-- Colours and fonts of the whole site: `js/tailwind-config.js`
+| File | Purpose |
+|---|---|
+| `frontend/css/style.css` | Custom styles |
+| `frontend/js/tailwind_config.js` | Tailwind theme, colours, fonts, and spacing |
+| `frontend/js/data/demos.js` | Demo messages and risk scores |
+| `frontend/js/data/scams.js` | Common scam examples |
+| `frontend/js/data/legal.js` | Privacy and Terms content |
+| `frontend/js/i18n.js` | English, Hinglish, and Hindi translations |
+| `frontend/js/app.js` | Application logic, language switching, voice, uploads, and pop-ups |
+| `index.html` | Main website structure |
 
-## If you are scammed in India
+The JavaScript files are loaded using standard HTML script tags in the following order:
 
-- Call the Cyber Crime Helpline **1930** immediately. The first hour matters most.
-- Report at [cybercrime.gov.in](https://cybercrime.gov.in).
-- Report spam calls and SMS at [Sanchar Saathi](https://sancharsaathi.gov.in).
+1. `demos.js`
+2. `scams.js`
+3. `legal.js`
+4. `i18n.js`
+5. `app.js`
 
-## Disclaimer
+## 🇮🇳 If You Encounter a Scam in India
 
-FraudShield is an educational project. A "Safe" result is not a guarantee. Always confirm with your bank's official app or the number printed on your card. It is not legal or financial advice.
+- **Call 1930:** Contact the National Cyber Crime Helpline immediately if you have lost money through cyber fraud.
+- **Report online:** Visit [National Cyber Crime Reporting Portal](https://cybercrime.gov.in).
+- **Report suspicious communication:** Use [Sanchar Saathi](https://sancharsaathi.gov.in).
+
+## ⚠️ Disclaimer
+
+FraudShield is an educational prototype and is not a substitute for professional cybersecurity investigation.
+
+A low-risk or "Safe" result does not guarantee that a message is legitimate. Always verify suspicious communications through official websites, applications, or verified customer-support channels.
+
+FraudShield does not currently provide real AI-powered scam detection, legal advice, or financial advice.
+
+---
+
+**Built with the goal of making digital safety easier to understand for everyone.**
+
+🛡️ *Think before you tap. Stay alert. Stay safe.*
